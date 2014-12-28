@@ -1,13 +1,11 @@
-# Isomorphic JavaScript with React and NodeJS
+# Isomorphic JavaScript with React & Node
 
-## the problem
-JavaScript driven MVCs can take a second or two to load content on the page for users. This makes for a bad user experience.
-
-** Why not render the JavaScript markup on the server? **
-
-## Introducing Isomorphic JavaScript
+## What is Isomorphic JavaScript ?
 
 Shared JavaScript that runs on both the client & server.
+
+## What does Isomorphic JS solve?
+JavaScript driven MVCs can take a second or two to load content on the page for users. This makes for a bad user experience.
 
 Benefits:
 * better overall user experience
@@ -15,7 +13,7 @@ Benefits:
 * easier code maintenance
 * free progressive enhancements
 
-## Instructions
+## Install Instructions
 
 If you would like to download the code and try it for yourself:
 
