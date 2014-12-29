@@ -4,14 +4,16 @@
 
 Shared JavaScript that runs on both the client & server.
 
-## What does Isomorphic JS solve?
-JavaScript driven MVCs can take a second or two to load content on the page for users. This makes for a bad user experience.
+## What does it solve?
+JavaScript driven MVCs (angular, ember, backbone, etc.) render on DOM load, this can be really really slowwwww and can make for a bad user experience. They also aren't indexable by search engines (without paying $$ for a third party service like https://prerender.io/).
 
-Benefits:
-* better overall user experience
-* search engine indexable
-* easier code maintenance
-* free progressive enhancements
+When you render JS on the server side you can solve these problems and more!
+
+Isomorphic Javascript Benefits:
+* Better overall user experience
+* Search engine indexable
+* Easier code maintenance
+* Free progressive enhancements
 
 ## Install Instructions
 
