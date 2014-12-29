@@ -9,7 +9,7 @@ JavaScript driven MVCs (angular, ember, backbone, etc.) render on DOM load, this
 
 When you render JS on the server side you can solve these problems and more!
 
-Isomorphic Javascript Benefits:
+* Isomorphic Javascript Benefits:*
 * Better overall user experience
 * Search engine indexable
 * Easier code maintenance
