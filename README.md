@@ -1,6 +1,8 @@
 
 ### What is Isomorphic JavaScript ?
 
+See full post on [ReactJS News](https://reactjsnews.com/)
+
 Shared JavaScript that runs on both the client & server.
 
 #### What's the point?
