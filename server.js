@@ -6,7 +6,7 @@ var express = require('express'),
 path = require('path');
 
 var app = express();
-
+// Make sure to include the JSX transpiler
 require("node-jsx").install();
 
 var port = 4444;

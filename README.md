@@ -1,13 +1,14 @@
-# Isomorphic JavaScript with React & Node
 
-## What is Isomorphic JavaScript ?
+### What is Isomorphic JavaScript ?
 
 Shared JavaScript that runs on both the client & server.
 
-## What does it solve?
-JavaScript driven MVCs (angular, ember, backbone, etc.) render on DOM load, this can be really really slowwwww and can make for a bad user experience. They also aren't indexable by search engines (without paying $$ for a third party service like https://prerender.io/).
+#### What's the point?
+JavaScript driven MVCs (angular, ember, backbone, etc.) render on DOM load, this can be really slowwwww & can make for a bad user experience.
 
-When you render JS on the server side you can solve these problems and more!
+Another major problem is that they aren't indexable by search engines (without paying $$ for a third party service like https://prerender.io/). If your app is serving any kind of data that people might be searching for, **this is a bad thing**.
+
+When you render JavaScript on the server side you can solve these problems and be super cool while doing so!
 
 #### Isomorphic Javascript Benefits:
 * Better overall user experience
@@ -15,7 +16,106 @@ When you render JS on the server side you can solve these problems and more!
 * Easier code maintenance
 * Free progressive enhancements
 
-## Install Instructions
+I've built a live example of isomorphic JS for you to check out here: https://github.com/DavidWells/isomorphic-react-example
+
+The demo uses the [griddle react](http://dynamictyped.github.io/Griddle/) component to show how you can have apps with large data sets indexed by search engines and thus easier to find by potential users in search engines.
+
+### Tutorial & Video!
+
+
+
+In /server.js install the jsx transpiler:
+```
+// Make sure to include the JSX transpiler
+require("node-jsx").install();
+```
+
+Then change components to Node friendly syntax where you module.exports the component if it's in a seperate file
+
+Also make sure to `React.createFactory` your component for it to be rendered server side
+```js
+/** @jsx React.DOM */
+
+var React = require('react/addons');
+
+/* create factory with griddle component */
+var Griddle = React.createFactory(require('griddle-react'));
+
+var fakeData = require('../data/fakeData.js').fakeData;
+var columnMeta = require('../data/columnMeta.js').columnMeta;
+var resultsPerPage = 100;
+
+var ReactApp = React.createClass({
+
+      componentDidMount: function () {
+        console.log(fakeData);
+
+      },
+
+      render: function () {
+
+        return (
+          <div id="table-area">
+
+             <Griddle results={fakeData} columnMetadata={columnMeta} resultsPerPage={resultsPerPage} tableClassName="table"/>
+
+          </div>
+        )
+      }
+
+  });
+
+/* Module.exports instead of normal dom mounting */
+module.exports.ReactApp = ReactApp;
+/* Normal mounting happens inside of /main.js and is bundled with browerify */
+```
+
+Now the magic happens with routes using `React.renderToString` inside /app/routes/coreRoutes.js:
+```
+var React = require('react/addons');
+var ReactApp = React.createFactory(require('../components/ReactApp').ReactApp);
+
+module.exports = function(app) {
+
+	app.get('/', function(req, res){
+    	// React.renderToString takes your component
+        // and generates the markup
+		var reactHtml = React.renderToString(ReactApp({}));
+        // Output html rendered by react
+		// console.log(myAppHtml);
+	    res.render('index.ejs', {reactOutput: reactHtml});
+	});
+
+};
+```
+
+The `reactOutput` variable is then passed into the template:
+```
+<!doctype html>
+<html>
+  <head>
+    <title>React Isomorphic Server Side Rendering Example</title>
+    <link href='/styles.css' rel="stylesheet">
+  </head>
+  <body>
+	<h1 id="main-title">React Isomorphic Server Side Rendering Example</h1>
+    <!-- reactOutput is the server compiled React Dom Nodes -->
+    <!-- comment out reactOutput to see empty non indexable source in browser -->
+    <div id="react-main-mount">
+      <%- reactOutput %>
+    </div>
+
+	<!-- comment out main.js to ONLY see server side rendering -->
+	<script src="/main.js"></script>
+
+
+  </body>
+</html>
+
+```
+
+
+### Demo Install Instructions
 
 If you would like to download the code and try it for yourself:
 
@@ -25,7 +125,9 @@ If you would like to download the code and try it for yourself:
 4. Visit in your browser at: `http://localhost:4444`
 5. To see serverside rendering, comment out main.js from the /views/index.ejs file. This will show what is rendered purely from the server side.
 
-## Other Isomorphic Tutorials
+Build changes with `gulp`
+
+### Other Isomorphic Tutorials & Resources
 
 ##### Server-Client with React
 * [Server/Client With React, Part 1: Getting Started](http://eflorenzano.com/blog/2014/04/09/react-part-1-getting-started/)
@@ -40,7 +142,6 @@ If you would like to download the code and try it for yourself:
 * [Server-side React with PHP – part 2](http://www.phpied.com/server-side-react-with-php-part-2/)
 * [Server-rendered React components in Rails](http://bensmithett.com/server-rendered-react-components-in-rails/)
 
-## New to React? Check out these tutorials
+### New to React? Check out these tutorials
 * [ReactJS For Stupid People](http://blog.andrewray.me/reactjs-for-stupid-people/)
 * [Flux For Stupid People](http://blog.andrewray.me/flux-for-stupid-people/)
-

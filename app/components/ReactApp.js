@@ -2,6 +2,7 @@
 
 var React = require('react/addons');
 var ReactButton =  React.createFactory(require('./ReactButton').ReactButton);
+/* create factory with griddle component */
 var Griddle = React.createFactory(require('griddle-react'));
 
 var fakeData = require('../data/fakeData.js').fakeData;
@@ -29,4 +30,5 @@ var ReactApp = React.createClass({
 
   });
 
+/* Module.exports instead of normal dom mounting */
 module.exports.ReactApp = ReactApp;
