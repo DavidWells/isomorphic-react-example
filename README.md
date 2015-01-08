@@ -115,7 +115,9 @@ The `reactOutput` variable is then passed into the template:
 </html>
 
 ```
+### Notes:
 
+Because the files are .js and not .jsx, the `React.createFactory` has to be used when including components. See why here: https://gist.github.com/sebmarkbage/ae327f2eda03bf165261
 
 ### Demo Install Instructions
 
