@@ -24,7 +24,7 @@ The demo uses the [griddle react](http://dynamictyped.github.io/Griddle/) compon
 
 ### Tutorial & Video!
 
-
+https://www.youtube.com/watch?v=8wfY4TGtMUo
 
 In /server.js install the jsx transpiler:
 ```
