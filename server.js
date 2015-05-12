@@ -1,29 +1,23 @@
 // server.js
 
-// set up ======================================================================
-// get all the tools we need
 var express = require('express'),
-path = require('path');
+path = require('path'),
+app = express(),
+port = 4444,
+bodyParser = require('body-parser');
 
-var app = express();
 // Make sure to include the JSX transpiler
 require("node-jsx").install();
 
-var port = 4444;
-var bodyParser = require('body-parser');
-
-app.use(bodyParser.json()); // get information from html forms
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
+// Include static assets. Not advised for production
 app.use(express.static(path.join(__dirname, 'public')));
-
+// Set view path
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs'); // set up ejs for templating
+// set up ejs for templating. You can use whatever
+app.set('view engine', 'ejs');
 
 // Set up Routes for the application
-require('./app/routes/coreRoutes.js')(app);
+require('./app/routes/core-routes.js')(app);
 
 //Route not found -- Set 404
 app.get('*', function(req, res) {
@@ -33,5 +27,4 @@ app.get('*', function(req, res) {
 });
 
 app.listen(port);
-
 console.log('Server is Up and Running at Port : ' + port);
