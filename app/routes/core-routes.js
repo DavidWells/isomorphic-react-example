@@ -1,5 +1,5 @@
-var React = require('react/addons');
-var ReactApp = React.createFactory(require('../components/ReactApp').ReactApp);
+var React = require('react/addons'),
+ReactApp = React.createFactory(require('../components/ReactApp'));
 
 module.exports = function(app) {
 
