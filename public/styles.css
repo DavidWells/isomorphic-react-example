@@ -378,3 +378,9 @@ footer a, footer a:visited{
     header .btn-group{display:none;}
     header small{display:none;}
 }
+.griddle .sort-ascending:after,
+.griddle .sort-descending:after {
+  content: '';
+  display: none;
+
+}
