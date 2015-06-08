@@ -69,7 +69,7 @@ var ReactApp = React.createClass({
 
 /* Module.exports instead of normal dom mounting */
 module.exports.ReactApp = ReactApp;
-/* Normal mounting happens inside of /main.js and is bundled with browerify */
+/* Normal mounting happens inside of /main.js and is bundled with browserify */
 ```
 
 Now the magic happens with routes using `React.renderToString` inside /app/routes/coreRoutes.js:
