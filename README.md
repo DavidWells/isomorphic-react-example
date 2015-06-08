@@ -1,7 +1,7 @@
 
 ### What is Isomorphic JavaScript ?
 
-See full post on [ReactJS News](https://reactjsnews.com/)
+See full post on [ReactJS News](http://reactjsnews.com/isomorphic-javascript-with-react-node/)
 
 Shared JavaScript that runs on both the client & server.
 
