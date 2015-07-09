@@ -123,7 +123,7 @@ Because the files are .js and not .jsx, the `React.createFactory` has to be used
 
 If you would like to download the code and try it for yourself:
 
-1. Clone the repo: `git clone git@github.com:HelloClicky/helloClicky.git`
+1. Clone the repo: `git@github.com:DavidWells/isomorphic-react-example.git`
 2. Install packages: `npm install`
 3. Launch: `node server.js`
 4. Visit in your browser at: `http://localhost:4444`
