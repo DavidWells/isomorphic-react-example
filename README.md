@@ -1,5 +1,7 @@
 
-### What is Isomorphic JavaScript ?
+### What is Isomorphic/Universal JavaScript ?
+
+There is a push to change the word [Isomorphic to Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9). Whatever floats your boat!
 
 See full post on [ReactJS News](http://reactjsnews.com/isomorphic-javascript-with-react-node/)
 
@@ -12,7 +14,7 @@ Another major problem is that they aren't indexable by search engines (without p
 
 When you render JavaScript on the server side you can solve these problems and be super cool while doing so!
 
-#### Isomorphic Javascript Benefits:
+####  Isomorphic Javascript Benefits:
 * Better overall user experience
 * Search engine indexable
 * Easier code maintenance
