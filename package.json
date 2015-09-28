@@ -1,6 +1,7 @@
 {
   "name": "node-authentication",
   "main": "server.js",
+  "start": "node ./src/bin/www",
   "engines": {
     "node": "0.12.6",
     "npm": "2.11.3"
@@ -8,18 +9,17 @@
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.0",
-    "css-mqpacker": "~3.1.0",
-    "csswring": "^3.0.5",
-    "debug": "^2.2.0",
     "express": "~4.0.0",
     "griddle-react": "^0.1.19",
-    "imagemin-pngquant": "~4.1.2",
     "node-jsx": "~0.2.0",
     "nunjucks": "^2.1.0",
     "path": "*",
     "react": "~0.12.0",
-    "run-sequence": "^1.1.2",
     "underscore": "~1.8.3",
+    "css-mqpacker": "~3.1.0",
+    "csswring": "^3.0.5",
+    "imagemin-pngquant": "~4.1.2",
+    "run-sequence": "^1.1.2",
     "wiredep": "^2.2.2"
   },
   "devDependencies": {

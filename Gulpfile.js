@@ -16,15 +16,41 @@ pngquant = require('imagemin-pngquant'),
 cssmin = require('gulp-minify-css'),
 runSequence = require('run-sequence');
 
+gulp.task('watch-sass', function () {
+  return sass('src/public/scss/main.scss', { style: 'expanded' })
+    .pipe(autoprefixer({
+        // This will include support for all major browsers!
+        browsers: [
+            'last 3 versions',
+            'Chrome > 20',
+            'Firefox > 20',
+            'Safari > 3.1',
+            'Opera > 12.1',
+            'Explorer > 11',
+        ],
+        cascade: false
+    }))
+    .pipe(gulp.dest('src/public/styles'));
+});
+
 gulp.task('scripts', function () {
 
-    gulp.src(['app/main.js'])
+    gulp.src(['src/app/main.js'])
         .pipe(browserify({
             debug: true,
             transform: [ 'reactify' ]
         }))
-        .pipe(gulp.dest('./public/'));
+        .pipe(gulp.dest('./src/public/jsx/'));
 
 });
 
-gulp.task('default', ['scripts']);
+// gulp.task('default', ['scripts']);
+
+gulp.task('default', [
+  'watch-sass',
+  // 'watch-jsx',
+  // 'watch-bower',
+  'scripts',
+  'develop',
+  'watch'
+]);

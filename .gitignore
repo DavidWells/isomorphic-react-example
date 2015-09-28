@@ -1,2 +1,10 @@
-node_modules/
+# **********************************
+#  GIT IGNORE FILE
+# **********************************
 npm-debug.log
+node_modules/
+dist/
+src/public/components/
+src/public/styles/
+.sass-cache/
+.tmp/
