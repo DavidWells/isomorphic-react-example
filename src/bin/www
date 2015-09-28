@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var debug = require('debug')('expressapp');
-var app = require('./../server.js');
+var app = require('../server.js');
 
 console.log("Starting Node Server");
 
