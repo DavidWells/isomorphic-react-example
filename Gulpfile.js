@@ -44,6 +44,21 @@ gulp.task('scripts', function () {
 
 });
 
+gulp.task('watch', function() {
+  gulp.watch('src/public/scss/**/*.scss', ['watch-sass']);
+  // gulp.watch('src/bower.json', ['watch-bower']);
+  // gulp.watch('src/public/scripts/**/*.jsx', ['watch-jsx']);
+
+});
+
+gulp.task('develop', function () {
+  nodemon({
+    script: 'src/bin/www',
+    ext: 'js jade'
+  }).on('restart', function () {
+  });
+});
+
 // gulp.task('default', ['scripts']);
 
 gulp.task('default', [

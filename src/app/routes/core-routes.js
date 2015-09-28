@@ -15,7 +15,7 @@ module.exports = function(app) {
 		var reactHtml = React.renderToString(ReactApp({}));
     // Output html rendered by react
 		// console.log(myAppHtml);
-    res.render('index.html', {reactOutput: reactHtml});
+    	res.render('index.html', {reactOutput: reactHtml});
 	});
 
 };

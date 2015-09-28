@@ -16,19 +16,21 @@ bodyParser = require('body-parser');
 require('node-jsx').install();
 
 // *******************************************************
-// STATIC DIRECTORY SETUP
-// *******************************************************
-app.use(express.static(path.join(__dirname, 'public')));
-
-// *******************************************************
 // NUNJUCKS TEMPLATING SETUP
 // *******************************************************
 // NOTE: using autoescape = false stops the react html
 // elements from being escaped as strings instead of html elements
-nunjucks.configure('./views', {
+// NOTE: this needs to be configured in relation to the directory
+// that the package.json file is located
+nunjucks.configure('./src/views', {
     autoescape: false,
     express: app
 });
+
+// *******************************************************
+// STATIC DIRECTORY SETUP
+// *******************************************************
+app.use(express.static(path.join(__dirname, 'public')));
 
 // *******************************************************
 // APP ROUTING

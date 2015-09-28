@@ -6,5 +6,6 @@ node_modules/
 dist/
 src/public/components/
 src/public/styles/
+src/public/jsx/
 .sass-cache/
 .tmp/
