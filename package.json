@@ -4,9 +4,9 @@
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.0",
-    "ejs": "~0.8.5",
     "express": "~4.0.0",
     "griddle-react": "^0.1.19",
+    "nunjucks": "^2.1.0",
     "path": "*",
     "react": "~0.12.0"
   },
