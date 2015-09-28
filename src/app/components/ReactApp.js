@@ -18,7 +18,7 @@ var ReactApp = React.createClass({
       render: function () {
         return (
           <div id="table-area">
-
+            <p>Finally, made a new p tag</p>
              <Griddle results={fakeData}
                       columnMetadata={columnMeta}
                       resultsPerPage={resultsPerPage}

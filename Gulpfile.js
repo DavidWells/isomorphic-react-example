@@ -14,7 +14,8 @@ plumber = require('gulp-plumber'),
 htmlmin = require('gulp-htmlmin'),
 pngquant = require('imagemin-pngquant'),
 cssmin = require('gulp-minify-css'),
-runSequence = require('run-sequence');
+runSequence = require('run-sequence'),
+nodeJsx = require('node-jsx');
 
 gulp.task('watch-sass', function () {
   return sass('src/public/scss/main.scss', { style: 'expanded' })
@@ -33,6 +34,18 @@ gulp.task('watch-sass', function () {
     .pipe(gulp.dest('src/public/styles'));
 });
 
+// Watch React Files
+gulp.task('watch-jsx', function () {
+    console.log("Running Watch-JSX");
+    nodeJsx.install();
+    gulp.src(['src/app/main.js'])
+        .pipe(browserify({
+            debug: true,
+            transform: [ 'reactify' ]
+        }))
+        .pipe(gulp.dest('./src/public/jsx/'));
+});
+
 gulp.task('scripts', function () {
 
     gulp.src(['src/app/main.js'])
@@ -46,9 +59,7 @@ gulp.task('scripts', function () {
 
 gulp.task('watch', function() {
   gulp.watch('src/public/scss/**/*.scss', ['watch-sass']);
-  // gulp.watch('src/bower.json', ['watch-bower']);
-  // gulp.watch('src/public/scripts/**/*.jsx', ['watch-jsx']);
-
+  gulp.watch('src/app/components/**/*.js', ['watch-jsx']);
 });
 
 gulp.task('develop', function () {
@@ -63,8 +74,6 @@ gulp.task('develop', function () {
 
 gulp.task('default', [
   'watch-sass',
-  // 'watch-jsx',
-  // 'watch-bower',
   'scripts',
   'develop',
   'watch'
