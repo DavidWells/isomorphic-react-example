@@ -5,7 +5,7 @@ var express = require('express'),
 nunjucks = require('nunjucks'),
 path = require('path'),
 app = express(),
-port = 4444,
+port = 3000,
 bodyParser = require('body-parser');
 
 // *******************************************************
@@ -47,5 +47,7 @@ app.get('*', function(req, res) {
 // *******************************************************
 // SERVER LISTENING AND STARTUP
 // *******************************************************
-app.listen(port);
-console.log('Server is Up and Running at Port : ' + port);
+// app.listen(port);
+// console.log('Server is Up and Running at Port : ' + port);
+
+module.exports = app;
