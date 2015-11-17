@@ -40,7 +40,7 @@ Also make sure to `React.createFactory` your component for it to be rendered ser
 ```js
 /** @jsx React.DOM */
 
-var React = require('react/addons');
+var React = require('react');
 
 /* create factory with griddle component */
 var Griddle = React.createFactory(require('griddle-react'));
@@ -76,7 +76,7 @@ module.exports.ReactApp = ReactApp;
 
 Now the magic happens with routes using `React.renderToString` inside /app/routes/coreRoutes.js:
 ```
-var React = require('react/addons');
+var React = require('react');
 var ReactApp = React.createFactory(require('../components/ReactApp').ReactApp);
 
 module.exports = function(app) {
