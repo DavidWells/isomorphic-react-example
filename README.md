@@ -1,4 +1,3 @@
-
 ### What is Isomorphic/Universal JavaScript ?
 
 There is a push to change the word [Isomorphic to Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9). Whatever floats your boat!
@@ -29,7 +28,7 @@ The demo uses the [griddle react](http://dynamictyped.github.io/Griddle/) compon
 https://www.youtube.com/watch?v=8wfY4TGtMUo
 
 In /server.js install the jsx transpiler:
-```
+```js
 // Make sure to include the JSX transpiler
 require("node-jsx").install();
 ```
@@ -75,7 +74,7 @@ module.exports.ReactApp = ReactApp;
 ```
 
 Now the magic happens with routes using `React.renderToString` inside /app/routes/coreRoutes.js:
-```
+```js
 var React = require('react/addons');
 var ReactApp = React.createFactory(require('../components/ReactApp').ReactApp);
 
@@ -94,7 +93,7 @@ module.exports = function(app) {
 ```
 
 The `reactOutput` variable is then passed into the template:
-```
+```html
 <!doctype html>
 <html>
   <head>
