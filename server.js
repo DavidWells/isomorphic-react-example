@@ -7,7 +7,12 @@ port = 4444,
 bodyParser = require('body-parser');
 
 // Make sure to include the JSX transpiler
-require('node-jsx').install();
+// require('node-jsx').install();
+require('babel-register')({
+   presets: [ 'es2015', 'react' ],
+   extensions: ['.es6', '.es', '.jsx', '.js']
+});
+
 
 // Include static assets. Not advised for production
 app.use(express.static(path.join(__dirname, 'public')));
