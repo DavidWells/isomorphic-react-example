@@ -1,21 +1,48 @@
 {
   "name": "node-authentication",
   "main": "server.js",
+  "start": "node ./src/bin/www",
+  "engines": {
+    "node": "0.12.6",
+    "npm": "2.11.3"
+  },
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.0",
-    "ejs": "~0.8.5",
     "express": "~4.0.0",
     "griddle-react": "^0.1.19",
+    "node-jsx": "~0.2.0",
+    "nunjucks": "^2.1.0",
     "path": "*",
-    "react": "~0.12.0"
+    "react": "~0.12.0",
+    "underscore": "~1.8.3",
+    "css-mqpacker": "~3.1.0",
+    "csswring": "^3.0.5",
+    "imagemin-pngquant": "~4.1.2",
+    "run-sequence": "^1.1.2",
+    "wiredep": "^2.2.2"
   },
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
     "browserify": "~3.20.0",
     "gulp": "~3.8.9",
+    "gulp-autoprefixer": "~2.3.1",
     "gulp-browserify": "~0.5.0",
+    "gulp-cache": "^0.3.0",
     "gulp-concat": "~2.4.1",
-    "node-jsx": "~0.2.0",
+    "gulp-htmlmin": "~1.1.3",
+    "gulp-if": "~1.2.5",
+    "gulp-imagemin": "~2.3.0",
+    "gulp-livereload": "~3.8.0",
+    "gulp-minify-css": "~1.2.0",
+    "gulp-nodemon": "~2.0.2",
+    "gulp-plumber": "~1.0.0",
+    "gulp-postcss": "^5.1.9",
+    "gulp-react": "^3.0.1",
+    "gulp-ruby-sass": "~1.0.1",
+    "gulp-sourcemaps": "~1.5.2",
+    "gulp-uglify": "^1.4.1",
+    "gulp-useref": "~1.2.0",
     "react-tools": "^0.12.0",
     "reactify": "0.15.2"
   }
