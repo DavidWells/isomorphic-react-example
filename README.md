@@ -2,7 +2,7 @@
 
 There is a push to change the word [Isomorphic to Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9). Whatever floats your boat!
 
-See full post on [ReactJS News](http://reactjsnews.com/isomorphic-javascript-with-react-node/)
+See full post on [ReactJS News](http://reactjsnews.com/isomorphic-javascript-with-react-node)
 
 Shared JavaScript that runs on both the client & server.
 
